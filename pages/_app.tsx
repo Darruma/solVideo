@@ -6,8 +6,11 @@ import Head from 'next/head';
 import { io } from 'socket.io-client';
 
 import '../styles/globals.css';
-
-const socket = io('/', { path: '/api/socketio' });
+const isDev = process.env.NODE_ENV === 'development';
+const url = isDev
+  ? 'http://localhost:3005'
+  : 'https://server-sol-chat.onrender.com';
+const socket = io(url);
 export const SocketContext = createContext(socket);
 
 export default function MyApp({ Component, pageProps }: AppProps) {

@@ -62,6 +62,7 @@ export default function UsersConnectionProvider({
           visible: initMuted,
           muted: initVisible,
         });
+        console.log('User joined event', id);
 
         const call = peer.call(
           id,
