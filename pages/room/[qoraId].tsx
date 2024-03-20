@@ -30,5 +30,5 @@ export const getServerSideProps = async (
   ctx: GetServerSidePropsContext<any, PreviewData>
 ) =>
   await withPageAuthRequired({
-    returnTo: '/qora/' + ctx.query.qoraId,
+    returnTo: '/room/' + ctx.query.qoraId,
   })(ctx);
