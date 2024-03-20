@@ -10,9 +10,7 @@ export default function WelcomeContainer({
           <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block text-gray-200 xl:inline">
-                  Sol-VideoChat
-                </span>{' '}
+                <span className="block text-gray-200 xl:inline">Sol Video</span>{' '}
                 <br />
                 <span className="block text-emerald-500 xl:inline">
                   For secure business and friendly meetings.
@@ -23,6 +21,24 @@ export default function WelcomeContainer({
                 users to securely communicate with each other.
               </p>
               <div className="flex gap-4 justify-start mt-4">{children}</div>
+              <div className="flex flex-row gap-4">
+                <div
+                  onClick={() => {
+                    window.open('https://t.me/SolVideoPortal', '_blank');
+                  }}
+                  className="mt-4 text-2xl text-gray-200 font-semibold tracking-tight cursor-pointer"
+                >
+                  Telegram
+                </div>
+                <div
+                  onClick={() => {
+                    window.open('https://twitter.com/Sol_Video_Coin', '_blank');
+                  }}
+                  className="mt-4 text-2xl text-gray-200 font-semibold tracking-tight cursor-pointer"
+                >
+                  Twitter
+                </div>
+              </div>
             </div>
           </main>
         </div>
