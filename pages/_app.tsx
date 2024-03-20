@@ -1,27 +1,25 @@
-import { createContext } from 'react';
+import React, { createContext , FC, useMemo } from 'react';
 
 import Head from 'next/head';
-import { io } from 'socket.io-client';
 import '../styles/globals.css';
-import React, { FC, useMemo } from 'react';
+import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import {
   ConnectionProvider,
   WalletProvider,
 } from '@solana/wallet-adapter-react';
-import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
-import { UnsafeBurnerWalletAdapter } from '@solana/wallet-adapter-wallets';
 import {
   WalletModalProvider,
   WalletDisconnectButton,
   WalletMultiButton,
 } from '@solana/wallet-adapter-react-ui';
+import { UnsafeBurnerWalletAdapter } from '@solana/wallet-adapter-wallets';
 import { clusterApiUrl } from '@solana/web3.js';
 
 require('@solana/wallet-adapter-react-ui/styles.css');
 
 import type { AppProps } from 'next/app';
+import { io } from 'socket.io-client';
 
-import '../styles/globals.css';
 const isDev = process.env.NODE_ENV === 'development';
 const url = isDev
   ? 'http://localhost:3005'

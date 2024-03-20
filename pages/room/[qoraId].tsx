@@ -3,12 +3,12 @@ import { createContext, useState } from 'react';
 import Room from '@app/index';
 import { Lobby } from '@components/index';
 import { useMediaStream } from '@hooks/index';
+import { useWallet } from '@solana/wallet-adapter-react';
 import { NextPage, GetServerSidePropsContext, PreviewData } from 'next';
+import Link from 'next/link';
 
 import { LoaderError } from '@common/components';
 import { FAILURE_MSG, LOADER_STREAM_MSG } from '@common/constants';
-import { useWallet } from '@solana/wallet-adapter-react';
-import Link from 'next/link';
 
 export const QoraContext = createContext<any>({});
 

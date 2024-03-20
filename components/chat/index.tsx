@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
 
 import { SocketContext } from '@pages/_app';
+import { useWallet } from '@solana/wallet-adapter-react';
 
 import { MYSELF } from '@common/constants';
 import { UserMessage } from '@common/types';
 import { append, formatTimeHHMM } from '@common/utils';
 
 import { Message } from '..';
-import { useWallet } from '@solana/wallet-adapter-react';
 
 const Chat = () => {
   //const username = useUser().user!.name; // use solana wallet
