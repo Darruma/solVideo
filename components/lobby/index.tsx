@@ -17,7 +17,7 @@ export default function Lobby({
   const { muted, visible, toggle, toggleVideo } = useMediaStream(stream);
 
   return (
-    <div className="h-screen w-auto grid grid-cols-2 gap-4 place-content-center place-items-center">
+    <div className="h-screen w-auto md:grid md:grid-cols-2 md:gap-4 md:place-content-center md:place-items-center flex flex-col gap-4">
       <div className="flex flex-col gap-2">
         <div className="text-white text-2xl underline">Lobby</div>
         <VideoContainer
