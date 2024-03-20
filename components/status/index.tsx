@@ -1,10 +1,8 @@
 import { useContext } from 'react';
 
-import { useUser } from '@auth0/nextjs-auth0';
 import { UsersStateContext } from 'contexts/users-settings';
 
 const Status = ({ muted, visible }: { muted: boolean; visible: boolean }) => {
-  const { picture: avatar } = useUser().user!;
   const { streams, avatars, isMuted, isHidden, names } =
     useContext(UsersStateContext);
   const usersEntries = Object.entries(streams);
@@ -12,7 +10,7 @@ const Status = ({ muted, visible }: { muted: boolean; visible: boolean }) => {
   return (
     <div className="overflow-y-auto h-[calc(100vh-8rem)]">
       <div className="flex gap-2 items-center pr-4 mb-4">
-        <img className="rounded-full w-8 h-8" src={avatar!} alt="User image" />
+        <img className="rounded-full w-8 h-8" src={''} alt="User image" />
         <span className="grow">Me</span>
         <div>
           {muted ? (

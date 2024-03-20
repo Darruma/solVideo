@@ -1,4 +1,3 @@
-import { useUser } from '@auth0/nextjs-auth0';
 import { VideoCameraIcon, MicrophoneIcon } from '@heroicons/react/solid';
 import { useMediaStream } from '@hooks/index';
 import Tooltip from 'react-tooltip';
@@ -15,18 +14,20 @@ export default function Lobby({
   stream: MediaStream;
   onJoinRoom: () => void;
 }) {
-  const user = useUser().user;
   const { muted, visible, toggle, toggleVideo } = useMediaStream(stream);
 
   return (
     <div className="h-screen w-auto grid grid-cols-2 gap-4 place-content-center place-items-center">
       <div className="flex flex-col gap-2">
+        <div className="text-white text-2xl underline">Lobby</div>
         <VideoContainer
           id="me"
           muted={muted}
           visible={visible}
           stream={stream}
-          userPicture={user?.picture || ''}
+          userPicture={
+            'https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI='
+          }
         >
           <PeerVideo key="me" stream={stream} name={MYSELF} isMe={true} />
         </VideoContainer>

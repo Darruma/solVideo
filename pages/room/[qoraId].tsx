@@ -1,7 +1,6 @@
 import { createContext, useState } from 'react';
 
 import Room from '@app/index';
-import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 import { Lobby } from '@components/index';
 import { useMediaStream } from '@hooks/index';
 import { NextPage, GetServerSidePropsContext, PreviewData } from 'next';
@@ -25,10 +24,3 @@ const Qora: NextPage = () => {
 };
 
 export default Qora;
-
-export const getServerSideProps = async (
-  ctx: GetServerSidePropsContext<any, PreviewData>
-) =>
-  await withPageAuthRequired({
-    returnTo: '/room/' + ctx.query.qoraId,
-  })(ctx);

@@ -1,11 +1,12 @@
-import { useUser } from '@auth0/nextjs-auth0';
 import Link from 'next/link';
 
 import { UserIcon } from '../../assets/icons';
+import { useWallet } from '@solana/wallet-adapter-react';
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
 const Header = () => {
-  const userMetadata = useUser();
-
+  // add solana wallet here
+  const { connected, wallet } = useWallet();
   return (
     <nav className="bg-gray-800">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -13,15 +14,7 @@ const Header = () => {
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
-                {!userMetadata.user ? (
-                  <Link href="/api/auth/login">
-                    <button className="text-white">Login</button>
-                  </Link>
-                ) : (
-                  <Link href="/api/auth/logout">
-                    <button className="text-white">Logout</button>
-                  </Link>
-                )}
+                <WalletMultiButton />
               </div>
             </div>
           </div>
@@ -34,15 +27,7 @@ const Header = () => {
                 aria-haspopup="true"
               >
                 <span className="sr-only">Open user menu</span>
-                {userMetadata.user?.picture ? (
-                  <img
-                    className="h-8 w-8 rounded-full"
-                    src={userMetadata.user.picture}
-                    alt=""
-                  />
-                ) : (
-                  <UserIcon className="h-10 w-10" />
-                )}
+                <UserIcon className="h-10 w-10" />
               </button>
             </div>
           </div>

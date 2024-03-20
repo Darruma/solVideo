@@ -1,18 +1,18 @@
 import { useContext, useEffect, useState } from 'react';
 
-import { useUser } from '@auth0/nextjs-auth0';
 import { SocketContext } from '@pages/_app';
 
 import { MYSELF } from '@common/constants';
 import { UserMessage } from '@common/types';
 import { append, formatTimeHHMM } from '@common/utils';
 
-
 import { Message } from '..';
+import { useWallet } from '@solana/wallet-adapter-react';
 
 const Chat = () => {
-  const username = useUser().user!.name;
+  //const username = useUser().user!.name; // use solana wallet
   const socket = useContext(SocketContext);
+  const { publicKey } = useWallet();
 
   const [text, setText] = useState('');
   const [messages, setMessages] = useState<UserMessage[]>([]);
@@ -34,7 +34,7 @@ const Chat = () => {
     if (e.key === 'Enter' && messageText) {
       const timeHHMM = formatTimeHHMM(Date.now());
       const message = {
-        user: username,
+        user: publicKey?.toString() || '',
         text: messageText,
         time: timeHHMM,
         shouldAggregate:

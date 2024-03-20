@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { useUser } from '@auth0/nextjs-auth0';
 import { toast } from 'react-toastify';
 
 import { append } from '@common/utils';
@@ -10,6 +9,7 @@ import { PeerVideo } from '@components/index';
 import { UsersStateContext, UsersUpdaterContext } from './users-settings';
 import { PeerId } from '@common/types';
 import { useRouter } from 'next/router';
+import { useWallet } from '@solana/wallet-adapter-react';
 
 export const UsersConnectionContext = createContext<any>({});
 
@@ -20,7 +20,9 @@ export default function UsersConnectionProvider({
   children,
 }: any) {
   const router = useRouter();
-  const user = useUser().user!;
+  //const user = useUser().user!;
+  //TODO: change to wallet
+  const { publicKey } = useWallet();
 
   const socket = useContext(SocketContext);
   const { streams } = useContext(UsersStateContext);
@@ -70,8 +72,8 @@ export default function UsersConnectionProvider({
           {
             metadata: {
               user: {
-                name: user.name,
-                picture: user.picture,
+                name: publicKey?.toString() || '',
+                picture: '',
               },
               muted,
               visible,

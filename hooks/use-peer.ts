@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
 
-import { useUser } from '@auth0/nextjs-auth0';
 import { useMediaStream } from '@hooks/index';
 import { SocketContext } from '@pages/_app';
 import { useRouter } from 'next/router';
@@ -8,6 +7,7 @@ import Peer from 'peerjs';
 
 import { Nullable, PeerId, RoomId } from '@common/types';
 import { error } from '@common/utils';
+import { useWallet } from '@solana/wallet-adapter-react';
 
 /**
  * Creates a peer and joins them into the room
@@ -16,7 +16,7 @@ import { error } from '@common/utils';
 const usePeer = (stream: MediaStream) => {
   const socket = useContext(SocketContext);
   const room = useRouter().query.qoraId as RoomId;
-  const user = useUser().user!;
+  const { publicKey } = useWallet();
 
   const { muted, visible } = useMediaStream(stream);
 
@@ -40,8 +40,8 @@ const usePeer = (stream: MediaStream) => {
               id,
               muted,
               visible,
-              name: user.name,
-              picture: user.picture,
+              name: publicKey?.toString(),
+              picture: '',
             },
           });
         });
