@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from 'react';
-
 import { ControlPanel, Chat, Status } from '@components/index';
 import { Streams, SharedScreenStream } from '@components/streams';
 import { usePeer, useScreen } from '@hooks/index';
@@ -9,7 +8,6 @@ import { UsersSettingsProvider, UsersConnectionProvider } from 'contexts';
 import { useRouter } from 'next/router';
 import { MediaConnection } from 'peerjs';
 import { toast, ToastContainer } from 'react-toastify';
-
 import { LoaderError, Modal } from '@common/components';
 import { FAILURE_MSG, LOADER_PEER_MSG, TOAST_PROPS } from '@common/constants';
 import { Kind, PeerId } from '@common/types';

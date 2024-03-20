@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { useWallet } from '@solana/wallet-adapter-react';
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { ROOM_NAME } from 'common/constants';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
@@ -7,8 +9,6 @@ import { useRouter } from 'next/router';
 import { createRoomId, createHost } from '@common/utils';
 
 import { Header, WelcomeContainer } from '../components';
-import { useWallet } from '@solana/wallet-adapter-react';
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
 const Home: NextPage = () => {
   const router = useRouter();
