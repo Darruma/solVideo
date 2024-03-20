@@ -1,23 +1,16 @@
-import React, { createContext , FC, useMemo } from 'react';
+import React, { createContext, FC, useMemo } from 'react';
 
-import Head from 'next/head';
 import '../styles/globals.css';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import {
   ConnectionProvider,
   WalletProvider,
 } from '@solana/wallet-adapter-react';
-import {
-  WalletModalProvider,
-  WalletDisconnectButton,
-  WalletMultiButton,
-} from '@solana/wallet-adapter-react-ui';
-import { UnsafeBurnerWalletAdapter } from '@solana/wallet-adapter-wallets';
+import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import { clusterApiUrl } from '@solana/web3.js';
-
 require('@solana/wallet-adapter-react-ui/styles.css');
-
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
 import { io } from 'socket.io-client';
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -49,7 +42,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
        * in the npm package `@solana/wallet-adapter-wallets`.
        */
     ],
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [network]
   );
   return (

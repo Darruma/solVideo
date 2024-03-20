@@ -11,7 +11,6 @@ export default function useStream(stream: Nullable<MediaStream> = null) {
   React.useEffect(() => {
     if (stream) {
       setStatus('idle');
-
       const [audio, video] = stream.getTracks();
       setM(!audio.enabled);
       setV(video.enabled);
@@ -22,7 +21,6 @@ export default function useStream(stream: Nullable<MediaStream> = null) {
             audio: true,
             video: true,
           });
-
           setState(stream);
           setStatus('success');
         } catch (error) {
