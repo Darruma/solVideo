@@ -13,11 +13,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { io } from 'socket.io-client';
 
-const isDev = process.env.NODE_ENV === 'development';
-const url = isDev
-  ? 'http://localhost:3005'
-  : 'https://server-sol-chat.onrender.com';
-const socket = io(url);
+const socket = io('https://server-sol-chat.onrender.com');
 export const SocketContext = createContext(socket);
 
 export default function MyApp({ Component, pageProps }: AppProps) {
