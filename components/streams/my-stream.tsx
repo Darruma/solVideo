@@ -1,10 +1,12 @@
 import { useContext } from 'react';
-import { useUser } from '@auth0/nextjs-auth0';
 
-import { MYSELF } from '@common/constants';
+import { useUser } from '@auth0/nextjs-auth0';
+import VideoContainer from '@components/video-container';
 import { UsersConnectionContext } from 'contexts/users-connection';
 
-import VideoContainer from '@components/video-container';
+import { MYSELF } from '@common/constants';
+
+
 import { PeerVideo } from '..';
 
 export default function MyStream({

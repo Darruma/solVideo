@@ -2,9 +2,10 @@ import { useContext } from 'react';
 
 import { UsersStateContext } from 'contexts/users-settings';
 
+import { Nullable } from '@common/types';
+
 import MyStream from './my-stream';
 import OtherStreams from './other-streams';
-import { Nullable } from '@common/types';
 
 export default function Streams({
   fullscreen,

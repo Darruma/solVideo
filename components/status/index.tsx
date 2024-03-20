@@ -1,6 +1,7 @@
 import { useContext } from 'react';
-import { UsersStateContext } from 'contexts/users-settings';
+
 import { useUser } from '@auth0/nextjs-auth0';
+import { UsersStateContext } from 'contexts/users-settings';
 
 const Status = ({ muted, visible }: { muted: boolean; visible: boolean }) => {
   const { picture: avatar } = useUser().user!;

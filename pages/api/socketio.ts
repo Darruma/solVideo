@@ -1,8 +1,8 @@
+import { SOCKET_PATH } from 'common/constants';
+import { NextApiResponseServerIO } from 'common/types';
 import { NextApiRequest } from 'next';
 import { Server as ServerIO } from 'socket.io';
 
-import { NextApiResponseServerIO } from 'common/types';
-import { SOCKET_PATH } from 'common/constants';
 
 const socketHandler = (req: NextApiRequest, res: NextApiResponseServerIO) => {
   if (!res.socket.server.io) {

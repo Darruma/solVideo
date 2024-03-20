@@ -2,6 +2,7 @@ import {
   MicrophoneIcon,
   PhoneMissedCallIcon as HangUpIcon,
 } from '@heroicons/react/solid';
+
 import CrossLineDiv from '@common/components/cross-line-div';
 
 const HostControlPanel = ({

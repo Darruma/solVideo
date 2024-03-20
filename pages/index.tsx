@@ -1,8 +1,10 @@
-import type { NextPage } from 'next';
-import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 import { ROOM_NAME } from 'common/constants';
+import type { NextPage } from 'next';
+import { useRouter } from 'next/router';
+
+
 import { createRoomId, createHost } from '@common/utils';
 
 import { Header, WelcomeContainer } from '../components';

@@ -1,10 +1,10 @@
 import { useUser } from '@auth0/nextjs-auth0';
 import { VideoCameraIcon, MicrophoneIcon } from '@heroicons/react/solid';
+import { useMediaStream } from '@hooks/index';
 import Tooltip from 'react-tooltip';
 
-import { useMediaStream } from '@hooks/index';
-import { MYSELF } from '@common/constants';
 import { CrossLineDiv } from '@common/components';
+import { MYSELF } from '@common/constants';
 
 import { PeerVideo, VideoContainer } from '..';
 

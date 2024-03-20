@@ -1,11 +1,10 @@
 import { useContext } from 'react';
 
-import { PeerId } from '@common/types';
-import { UsersStateContext } from 'contexts/users-settings';
-import { UsersConnectionContext } from 'contexts/users-connection';
-import { UsersUpdaterContext } from 'contexts/users-settings';
-
 import VideoContainer from '@components/video-container';
+import { UsersConnectionContext } from 'contexts/users-connection';
+import { UsersStateContext , UsersUpdaterContext } from 'contexts/users-settings';
+
+import { PeerId } from '@common/types';
 
 export default function OtherStreams() {
   const { streams, isMuted, isHidden, avatars } = useContext(UsersStateContext);
