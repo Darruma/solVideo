@@ -17,8 +17,8 @@ export default function WelcomeContainer({
                 </span>
               </h1>
               <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Solchat is a groundbreaking communication protocol that enables
-                users to securely communicate with each other.
+                Sol Video is a groundbreaking communication protocol that
+                enables users to securely communicate with each other.
               </p>
               <div className="flex gap-4 justify-start mt-4">{children}</div>
               <div className="flex flex-row gap-4">
