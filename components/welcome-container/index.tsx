@@ -24,7 +24,10 @@ export default function WelcomeContainer({
               <div className="flex flex-row gap-4">
                 <div
                   onClick={() => {
-                    window.open('https://t.me/SolVideoPortal', '_blank');
+                    window.open(
+                      'https://pump.fun/FhJo4BKxaWr1RkfSWM9NB1jFyU9XYJtDzTzPpKvqa2bF',
+                      '_blank'
+                    );
                   }}
                   className="mt-4 text-2xl text-gray-200 font-semibold tracking-tight cursor-pointer"
                 >
