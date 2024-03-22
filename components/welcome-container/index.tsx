@@ -10,14 +10,14 @@ export default function WelcomeContainer({
           <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block text-gray-200 xl:inline">Sol Video</span>{' '}
+                <span className="block text-gray-200 xl:inline">Sol Skype</span>{' '}
                 <br />
                 <span className="block text-emerald-500 xl:inline">
                   For secure business and friendly meetings.
                 </span>
               </h1>
               <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Sol Video is a groundbreaking communication protocol that
+                Sol Skype is a groundbreaking communication protocol that
                 enables users to securely communicate with each other.
               </p>
               <div className="flex gap-4 justify-start mt-4">{children}</div>
@@ -28,11 +28,11 @@ export default function WelcomeContainer({
                   }}
                   className="mt-4 text-2xl text-gray-200 font-semibold tracking-tight cursor-pointer"
                 >
-                  Telegram
+                  Pump.Fun Presale
                 </div>
                 <div
                   onClick={() => {
-                    window.open('https://twitter.com/Sol_Video_Coin', '_blank');
+                    window.open('https://twitter.com/', '_blank');
                   }}
                   className="mt-4 text-2xl text-gray-200 font-semibold tracking-tight cursor-pointer"
                 >
