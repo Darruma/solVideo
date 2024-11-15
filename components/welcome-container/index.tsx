@@ -24,11 +24,19 @@ export default function WelcomeContainer({
               <div className="flex flex-row gap-4">
                 <div
                   onClick={() => {
-                    window.open('https://twitter.com/', '_blank');
+                    window.open('https://twitter.com/MeetOnSol', '_blank');
                   }}
                   className="mt-4 text-2xl text-gray-200 font-semibold tracking-tight cursor-pointer"
                 >
                   Twitter
+                </div>
+                <div
+                  onClick={() => {
+                    window.open('https://t.me/+Wp9xxSczi0c0ZmM0', '_blank');
+                  }}
+                  className="mt-4 text-2xl text-gray-200 font-semibold tracking-tight cursor-pointer"
+                >
+                  Telegram
                 </div>
               </div>
             </div>
