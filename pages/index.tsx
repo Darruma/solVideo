@@ -56,7 +56,7 @@ const Home: NextPage = () => {
         )}
         {!connected && (
           <WalletMultiButton>
-            Connect your Solana Wallet to use Sol Skype
+            Connect your Solana Wallet to use Sol Meet
           </WalletMultiButton>
         )}
       </WelcomeContainer>
