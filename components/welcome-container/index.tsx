@@ -39,6 +39,7 @@ export default function WelcomeContainer({
                   Telegram
                 </div>
               </div>
+              <div>CA: 6kynYSz3Jj8ZPt5JV1RBXTZg4W8kAJgE5WFskDy2dAoy</div>
             </div>
           </main>
         </div>
